@@ -4,6 +4,7 @@
 ## Data:
 
 2 Products with different Price per m^2
+
 * Compact: 650€ per m^2
 * Optimal: 700€ per m^2
 
