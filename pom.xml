@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.purl.beroca</groupId>
+  <artifactId>hallo-versicherung</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>﻿Berechnung Versicherungssumme Hausratversicherung</name>
+  <description>Vorgaben:
+2 Versicherungsprodukte mit unterschiedlichem Preis pro m^2
+* Kompakt: 650€ pro m^2
+* Optimal: 700€ pro m^2
+
+Eingabe:	
+* Produkt: &quot;Kompakt&quot; oder &quot;Optimal&quot;
+* Wohnfläche in m^2
+
+Ausgabe:
+* Versicherungssumme
+</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  		<scope>test</scope>
+  	</dependency>
+  </dependencies>
+</project>
