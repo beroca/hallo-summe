@@ -1,20 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.purl.beroca</groupId>
-  <artifactId>hallo-versicherung</artifactId>
+  <artifactId>hallo-summe</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>﻿Berechnung Versicherungssumme Hausratversicherung</name>
-  <description>Vorgaben:
-2 Versicherungsprodukte mit unterschiedlichem Preis pro m^2
-* Kompakt: 650€ pro m^2
-* Optimal: 700€ pro m^2
+  <name>﻿Exercise: Calculate Sum</name>
+  <description>View on GitHub: https://github.com/beroca/hallo-summe.git
+Data:
+2 Products with different Price per m^2
+Compact: 650€ per m^2
+Optimal: 700€ per m^2
 
-Eingabe:	
-* Produkt: &quot;Kompakt&quot; oder &quot;Optimal&quot;
-* Wohnfläche in m^2
+Input:
+Product: “Compact” or “Optimal”
+Size in m^2
 
-Ausgabe:
-* Versicherungssumme
+Output:
+Total Cost Sum
 </description>
   <dependencies>
   	<dependency>
