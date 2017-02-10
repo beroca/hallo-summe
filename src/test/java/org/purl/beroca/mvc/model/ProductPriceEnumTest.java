@@ -19,13 +19,13 @@ public class ProductPriceEnumTest {
 		int size = testOfProductPriceEnum.size();
 		
 		// Positive tests
-		assertEquals("", true, testOfProductPriceEnum.containsOrdinal(0));
 		assertEquals("", true, testOfProductPriceEnum.containsOrdinal(1));
 		assertEquals("", true, testOfProductPriceEnum.containsOrdinal(2));
 		assertEquals("", true, testOfProductPriceEnum.containsOrdinal(size-1));
 
 		// Negative tests
 		assertEquals("", false, testOfProductPriceEnum.containsOrdinal(-1));
+		assertEquals("", false, testOfProductPriceEnum.containsOrdinal(0));
 		assertEquals("", false, testOfProductPriceEnum.containsOrdinal(3));
 		assertEquals("", false, testOfProductPriceEnum.containsOrdinal(size));
 		assertEquals("", false, testOfProductPriceEnum.containsOrdinal(size+1));
@@ -38,13 +38,13 @@ public class ProductPriceEnumTest {
 		int size = testOfProductPriceEnum.size();
 
 		// Positive tests
-		assertEquals("", "_NULL_", testOfProductPriceEnum.getProductName(0));
 		assertEquals("", "COMPACT", testOfProductPriceEnum.getProductName(1));
 		assertEquals("", "OPTIMAL", testOfProductPriceEnum.getProductName(2));
 		assertEquals("", "OPTIMAL", testOfProductPriceEnum.getProductName(size-1));
 		
 		// Negative tests
 		assertEquals("", null, testOfProductPriceEnum.getProductName(-1));
+		assertEquals("", null, testOfProductPriceEnum.getProductName(0));
 		assertEquals("", null, testOfProductPriceEnum.getProductName(3));
 		assertEquals("", null, testOfProductPriceEnum.getProductName(size));
 		assertEquals("", null, testOfProductPriceEnum.getProductName(size+1));
