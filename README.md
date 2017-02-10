@@ -1,4 +1,5 @@
-﻿# Exercise: Calculate Sum
+# Exercise: Calculate Sum
+**View on GitHub**: <https://github.com/beroca/hallo-summe.git>
 
 ## Data:
 
@@ -92,11 +93,14 @@ Example of the View class (`ProductPriceView`) on the Console:
 1: COMPACT: 650 €/m^2
 2: OPTIMAL: 700 €/m^2
 ----------------------------------------------------
-# Please, enter a Product Number:
-1
-# Please, enter Apartment size stdin m^2:
-1
-+ The Insurance Sum is: 650 €
+# Please, enter a VALID Product Number: 
+> 1
+# Please, enter Apartment size in m^2 (no decimals): 
+> 1
++ Product: COMPACT
++ Price: 650 €/m^2
++ Size: 1 m^2
++ Total Insurance Sum: 650 €
 ====================================================
 ```
 
