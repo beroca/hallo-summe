@@ -1,14 +1,26 @@
+﻿# Exercise: Calculate Sum
 
+## Data:
 
+2 Products with different Price per m^2
+* Compact: 650€ per m^2
+* Optimal: 700€ per m^2
 
+## Input:
 
+* Product: "Compact" or "Optimal"
+* Size in m^2
 
+## Output:
 
+* Total Cost Sum
 
+# Development (in-progress)
 
 Project structure.
 
 ```
+./hallo-summe
 $ tree
 .
 ├── pom.xml
@@ -25,6 +37,7 @@ $ tree
 │   │   │               ├── mvc                                 // MVC Pattern
 │   │   │               │   ├── controller
 │   │   │               │   │   └── Controller.java
+│   │   │               │   ├── HalloSumme.java                 // MVC main()
 │   │   │               │   ├── model
 │   │   │               │   │   ├── ProductPriceEnum.java       // Model 1
 │   │   │               │   │   ├── ProductPriceEnumMap.java    // Model 2
@@ -59,6 +72,7 @@ The project includes 2 approaches to handle the exercise:
   * Very customized but not optimal for reuse, extendibility, or software maintenance.
 
 * An adapted version of the "model view controller" (MVC) pattern (.mvc package)
+  * The class `HalloSumme` provides the main() entry point.
   * The MVC approach also provides multiple Model classes (i.e., Enum, EnumMap, SortedMap).
   * Each Model class provides a different implementation to the solution requested.
   * The Controller class uses polymorphism to instantiate every Model class at run-time.
@@ -69,6 +83,7 @@ Example of the View class (`ProductPriceView`) on the Console:
 
 ```
 ====================================================
+# HalloSumme - Model View Controller 17.02.09
 ====================================================
 + Implementation:
 + ProductPriceEnum
@@ -118,7 +133,9 @@ Example of the View class (`ProductPriceView`) on the Console:
   * User input (eg. via console).
 
 * Support CLI interface for App.
+  * Example: HalloSumme --product 1 --size 50 --verbose  
   * Where should the input params `String[] args` be validated ?
+  * HalloSumme.java or Controller.java (?)
   * The Controller has a handler to the Model so it can infer if the input params are valid.   
 
 * Add LOGGER facility.
