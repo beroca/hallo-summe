@@ -87,7 +87,7 @@ public class ProductPriceEnumTest {
 	}
 		
 	@Test
-	public void testGetSumInt() {
+	public void testGetSumIntVersionEnum() {
 		
 		int sizeInSqrMeter = 10;
 		
@@ -111,7 +111,13 @@ public class ProductPriceEnumTest {
 				fail();
 			}	
 		}
+	}
 		
+	@Test
+	public void testGetSumIntVersionLoop() {
+			
+		int sizeInSqrMeter = 10;
+			
 		// Option 2:
 		// Iterate thru many Enum index values: 
 		// - inbound (correct) and 
