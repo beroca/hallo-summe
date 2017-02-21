@@ -1,7 +1,7 @@
 package org.purl.beroca.mvc.view;
 
 /* Example of 1 full iteration cycle of this View class on the Console:
- 
+
 ====================================================
 # HalloVersicherung - Model View Controller 17.02.09
 ====================================================
@@ -29,7 +29,9 @@ package org.purl.beroca.mvc.view;
 * - View.responseOutput( Controller );
 * - View.close();
 */
-
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 import org.purl.beroca.common.MetaData;
@@ -37,10 +39,33 @@ import org.purl.beroca.mvc.controller.Controller;
 
 public class ProductPriceView {
 
-	// Use the same Scanner for all instances of the View class AND
-	// to process all input tokens from the STDIN
-	static Scanner stdin = new Scanner(System.in);
+	// Remove View <=> Scanner dependency
+	// Make InputStream of the Scanner AND
+	//      OutputStream 
+	// configurable via constructor
+	//
+	Scanner stdin;
+	OutputStream stdout;
 	
+	// By default the View class uses:
+	// - STDIN, and 
+	// - STDOUT
+	public ProductPriceView() {
+		this.stdin = new Scanner(System.in);
+		this.stdout = new PrintStream(System.out);
+	}
+
+	// Constructor to enable "dependency injection" of:
+	// InputStream that the Scanner will use
+	// OutputStream that the View class will use
+	// For example:
+	// - Human-end-user: console input/output (default)
+	// - JUnit-test: customized strings
+	public ProductPriceView(InputStream inputStream, OutputStream stdout) {
+		this.stdin = new Scanner(inputStream);
+		this.stdout = new PrintStream(System.out);
+	}
+
 	public void close() {
 		// This View instance is no longer needed.
 		// Therefore, close the Scanner.
