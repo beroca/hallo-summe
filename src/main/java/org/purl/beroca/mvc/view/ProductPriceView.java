@@ -75,7 +75,7 @@ public class ProductPriceView {
 	
 	public void open() {
 		this.stdout.println("====================================================");
-		this.stdout.println("# HalloSumme - Model View Controller " + MetaData.V_170209.getVERSION());
+		this.stdout.println("# HalloSumme - Model View Controller " + MetaData.V_170221.getVERSION());
 		this.stdout.println("====================================================");
 	}
 	
