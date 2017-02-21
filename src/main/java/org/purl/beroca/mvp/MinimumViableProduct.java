@@ -28,7 +28,7 @@ public class MinimumViableProduct {
 		int sum = 0;
 
 		System.out.println("=====================================================");
-		System.out.println("# HalloVersicherung - Minimum Viable Product " + MetaData.V_170209.getVERSION());
+		System.out.println("# HalloSumme - Minimum Viable Product " + MetaData.V_170209.getVERSION());
 		System.out.println("=====================================================");
 		System.out.println("+ Implementation:");
 		System.out.println("+ Minimum Viable Product");

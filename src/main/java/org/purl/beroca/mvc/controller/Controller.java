@@ -55,7 +55,7 @@ public class Controller {
 
 	public void run() {
 
-		// Initialize ArrayList with all Models that implements the HalloVersicherung  
+		// Initialize ArrayList with all Models that implements the HalloSumme  
 		List<ProductPriceModel> listOfModels = new ArrayList<>();
 		listOfModels.add(ProductPriceEnum._NULL_);
 		listOfModels.add(new ProductPriceEnumMap());

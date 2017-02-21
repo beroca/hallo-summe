@@ -2,7 +2,7 @@ package org.purl.beroca.mvc;
 
 import org.purl.beroca.mvc.controller.Controller;
 
-public class HalloVersicherung {
+public class HalloSumme {
 
 	public static void main(String[] args) {
 		

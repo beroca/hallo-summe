@@ -3,7 +3,7 @@ package org.purl.beroca.mvc.view;
 /* Example of 1 full iteration cycle of this View class on the Console:
 
 ====================================================
-# HalloVersicherung - Model View Controller 17.02.09
+# HalloSumme - Model View Controller 17.02.09
 ====================================================
 + Implementation: 
 + ProductPriceEnum
@@ -30,7 +30,6 @@ package org.purl.beroca.mvc.view;
 * - View.close();
 */
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -45,7 +44,7 @@ public class ProductPriceView {
 	// configurable via constructor
 	//
 	Scanner stdin;
-	OutputStream stdout;
+	PrintStream stdout;
 	
 	// By default the View class uses:
 	// - STDIN, and 
@@ -61,7 +60,7 @@ public class ProductPriceView {
 	// For example:
 	// - Human-end-user: console input/output (default)
 	// - JUnit-test: customized strings
-	public ProductPriceView(InputStream inputStream, OutputStream stdout) {
+	public ProductPriceView(InputStream inputStream, PrintStream stdout) {
 		this.stdin = new Scanner(inputStream);
 		this.stdout = new PrintStream(System.out);
 	}
@@ -75,9 +74,9 @@ public class ProductPriceView {
 	}
 	
 	public void open() {
-		System.out.println("====================================================");
-		System.out.println("# HalloVersicherung - Model View Controller " + MetaData.V_170209.getVERSION());
-		System.out.println("====================================================");
+		this.stdout.println("====================================================");
+		this.stdout.println("# HalloSumme - Model View Controller " + MetaData.V_170209.getVERSION());
+		this.stdout.println("====================================================");
 	}
 	
 	public void requestInput( Controller c ) { //should throw Exception (?)
@@ -106,34 +105,34 @@ public class ProductPriceView {
 		final String name = c.getModel().getProductName( c.getProductID() );
 		final int price = c.getModel().getProductPricePerSqrMeter( c.getProductID() );
 		
-		System.out.println("+ Product: " + name);
-		System.out.println("+ Price: " + price + " €/m^2");
-		System.out.println("+ Size: " + c.getSizeInSqrMeter() + " m^2");
-		System.out.println("+ Total Insurance Sum: " + c.getSum() + " €");
-		System.out.println("====================================================\n");
+		this.stdout.println("+ Product: " + name);
+		this.stdout.println("+ Price: " + price + " €/m^2");
+		this.stdout.println("+ Size: " + c.getSizeInSqrMeter() + " m^2");
+		this.stdout.println("+ Total Insurance Sum: " + c.getSum() + " €");
+		this.stdout.println("====================================================\n");
 	}
 
 	public void show( Controller c ) {
 
-		System.out.println("+ Implementation: ");
-		System.out.println("+ " + c.getModel().getClass().getSimpleName());		
+		this.stdout.println("+ Implementation: ");
+		this.stdout.println("+ " + c.getModel().getClass().getSimpleName());		
 		
-		System.out.println("# List of Products:");
-		System.out.println("----------------------------------------------------");
+		this.stdout.println("# List of Products:");
+		this.stdout.println("----------------------------------------------------");
 
 		for (int i = 1; i < c.getModel().size(); i++) { 
 			// For each product in the model:
 			// compose a human readable description in 1 line  
 			final String name = c.getModel().getProductName(i);
 			final int price = c.getModel().getProductPricePerSqrMeter(i);
-			System.out.println( i + ": " + name + ": " + price + " €/m^2" );
+			this.stdout.println( i + ": " + name + ": " + price + " €/m^2" );
 		}
-		System.out.println("----------------------------------------------------");
+		this.stdout.println("----------------------------------------------------");
 	}
 	
 	private void validateProductID( Controller c ) {
 		
-		System.out.print("# Please, enter a VALID Product Number: \n> ");
+		this.stdout.print("# Please, enter a VALID Product Number: \n> ");
 
 		boolean validInt = false; 	// Control if the user input is a VALID Product ID
 
@@ -142,8 +141,8 @@ public class ProductPriceView {
 			while (!stdin.hasNextInt()) {
 				// The next token on the stdin is NOT an Integer
 				// Discard and scan next token
-				System.out.println("- Error: INVALID Product Number");
-				System.out.print("# Please, enter a VALID Product Number: \n> ");
+				this.stdout.println("- Error: INVALID Product Number");
+				this.stdout.print("# Please, enter a VALID Product Number: \n> ");
 				stdin.next();
 			}
 
@@ -161,22 +160,22 @@ public class ProductPriceView {
 				// The token on the stdin IS an Integer BUT
 				// It is NOT a VALID Product ID
 				// Discard and scan the next token
-				System.out.println("- Error: " + input + " is an INVALID Product Number");
-				System.out.print("# Please, enter a VALID Product Number: \n> ");
+				this.stdout.println("- Error: " + input + " is an INVALID Product Number");
+				this.stdout.print("# Please, enter a VALID Product Number: \n> ");
 			}
 		}
 	}
 	
 	private void validateSizeInSqrMeter( Controller c ) {
 		
-		System.out.println("# Please, enter Apartment size in m^2 (no decimals): ");
-		System.out.print("> ");
+		this.stdout.println("# Please, enter Apartment size in m^2 (no decimals): ");
+		this.stdout.print("> ");
 		while (!stdin.hasNextInt()) {
 			// The next token on the stdin is NOT an Integer
 			// Discard and scan next token
-			System.out.println("- Error: INVALID Apartement size");
-			System.out.println("# Please, enter Apartment size in m^2 (no decimals): ");
-			System.out.print("> ");
+			this.stdout.println("- Error: INVALID Apartement size");
+			this.stdout.println("# Please, enter Apartment size in m^2 (no decimals): ");
+			this.stdout.print("> ");
 	        stdin.next();
 	    }
 
